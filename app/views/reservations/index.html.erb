@@ -1,0 +1,51 @@
+<div class="row" style="padding:2%">
+<div class="col-md-6">
+  <h2>Gönderdiğim Rezervasyonlar </h2>
+  <hr>
+  <% @myres.each do |r| %>
+
+  <%= r.toy_user.name %> -
+  <%= r.toy.name %>
+  <% if r.status == 0 %>
+
+  <p><b>Rezervasyonunuz Onayla Bekliyor .. </b></p>
+
+  <% elsif r.status == 1 %>
+
+  <p><b style="color:green">Rezervasyonunuz Onayladı .. </b></p>
+
+  <% else %>
+
+  <p><b style="color:red">Rezervasyonunuz Reddedildi .. </b></p>
+
+  <% end %>
+  <%= image_tag r.toy.image_url.to_s , class:"small_toys_image"%>
+
+  <% end%>
+</div>
+<div class="col-md-6">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Alınan Rezervasyonlar </h2>
+      <hr>
+    </div>
+  <div class="col-md-4">
+    <% @getres.each do |r| %>
+    <%= r.res_user.name %> -
+    <%= r.toy.name %>
+    <br>
+    <%= image_tag r.toy.image_url.to_s , class:"toys_image" ,style:"height:auto" %>
+  </div>
+    <div class="col-md-4 py-5">
+      <%= button_to "Rezervasyonu Onayla", {:controller => :reservations,
+            :action => 'res_onay', :id => r.id }, :method => :update , class:"btn btn-success"%>
+<hr>
+      <%= button_to "Rezervasyonu Redded", {:controller => :reservations,
+                  :action => 'res_red', :id => r.id }, :method => :update, class:"btn btn-danger" %>
+    </div>
+
+  <hr>
+    <% end%>
+  </div>
+</div>
+</div>

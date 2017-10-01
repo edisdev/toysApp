@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  toy_id: 1
+  res_user: 1
+  res_start_date: 2017-09-25
+  res_finish_date: 2017-09-25
+
+two:
+  toy_id: 1
+  res_user: 1
+  res_start_date: 2017-09-25
+  res_finish_date: 2017-09-25

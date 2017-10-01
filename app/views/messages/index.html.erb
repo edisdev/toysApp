@@ -1,0 +1,16 @@
+<div class="mymessages row container">
+  <% @messages.each do |m| %>
+<div class="col-md-12" style="border:2px solid #ccc; padding:7px">
+<h4>Konu : <b><%= m.subject  %></b> </h4>
+<h5>Gönderen : <b><%= m.sender.name %></b></h5>
+<hr>
+<p>
+<%= m.message %>
+</p>
+<%= link_to new_user_message_path(m.sender), class:"btn btn-danger" do %>
+<b>Mesajı Cevapla</b>
+<% end %>
+
+</div>
+  <% end %>
+</div>

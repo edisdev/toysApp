@@ -1,0 +1,40 @@
+<div class="container py-5">
+  <div class="toy-description justify-content-md-center">
+
+    <p>
+      <b>Oyuncak İsmi : </b>
+      <%= @toy.name %>
+    </p>
+
+    <p>
+      <b>Oyuncak Çeşidi : </b>
+      <%= @toy.toy_type %>
+    </p>
+
+    <p>
+      <b>Açıklama :</b>
+      <%= @toy.description %>
+    </p>
+
+
+    <h4>REZERVASYON DURUMU</h4>
+    <hr>
+    <div class="alert-warning" style="text-align:center;font-weight:bold;padding:2%">
+    <i class="fa fa-warning"></i>  Bu oyuncak aşağıdaki tarihler arasında rezervasyon için uygun değildir.</div>
+    <table cellpadding="10">
+    <tr>
+      <th>Rezervasyon Başlangıç Tarihi</th>
+      <th>Rezervasyon Bitiş Tarihi </th>
+    </tr>
+    <% @res.each do |r| %>
+    <% if r.res_start_date > Date.today %>
+    <tr>
+      <td><%= r.res_start_date %></td>
+      <td><%= r.res_finish_date %></td>
+    </tr>
+    <% end %>
+    <% end %>
+
+
+  </div>
+</div>

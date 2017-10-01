@@ -1,0 +1,21 @@
+<%= form_with(model:[@user,@message], local: true , class:"special-form") do |form| %>
+
+<div class="field">
+  <h4><%= @user.name %> Adlı Kişiye Mesaj Gönder</h4>
+  <hr>
+</div>
+  <div class="field">
+    <%= form.label :konu %>
+    <%= form.text_field :subject , class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mesaj %>
+    <br>
+    <%= form.text_area :message, cols:50, rows:8,class:"form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Mesaj Gönder", class:"btn btn-success" %>
+  </div>
+<% end %>

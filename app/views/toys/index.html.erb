@@ -1,0 +1,27 @@
+<% if user_signed_in? %>
+
+<div class="row">
+    <% @toys.each do |toy| %>
+   <div class="col-md-3">
+    <%=  link_to toy_path(toy) do %>
+     <%= image_tag toy.image_url.to_s , class:"toys_image"%>
+    <% end %>
+     <div class="toys_link">
+       <%=  link_to toy_path(toy) do %>
+         <%= toy.name %>
+       <% end %>
+       <% if current_user.id == toy.user_id %>
+       <%= link_to "Düzenle", edit_toy_path(toy) %>
+       <% end %>
+       Oyuncak Sahibi : <%= link_to toy.user.name , user_path(toy.user_id) %>
+       <% if current_user.id != toy.user_id %>
+       <%= link_to "Rezere Et", new_toy_reservation_path(toy) %>
+       <% end %>
+     </div>
+   </div>
+      <% end %>
+</div>
+
+<% else %>
+<%= render 'welcome/index' %>
+<% end %>
