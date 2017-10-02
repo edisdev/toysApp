@@ -1,4 +1,4 @@
-Ruby Version: 2.2.6 Rails Version : 5.13
+Ruby Version: 2.2.6 Rails Version : 5.1.0
 
 
 git clone https://github.com/haticeedis/toysApp.git
