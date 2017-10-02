@@ -1,24 +1,26 @@
-# README
+Ruby Version: 2.2.6 Rails Version : 5.13
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+git clone https://github.com/haticeedis/toysApp.git
 
-* Ruby version
+Then
 
-* System dependencies
+cd toysApp
 
-* Configuration
+Then
 
-* Database creation
+bundle install
 
-* Database initialization
+Then
 
-* How to run the test suite
+rake:db migrate
 
-* Services (job queues, cache servers, search engines, etc.)
+then
 
-* Deployment instructions
+rails s
 
-* ...
+anddd
+
+Got to http://localhost:3000/
+
+Run App ! :)
